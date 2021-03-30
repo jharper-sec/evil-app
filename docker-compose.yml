@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+
+  contrast-service:
+    image: contrast-service
+    build:
+      context: .
+      dockerfile: Dockerfile-contrast-service
+  
+  evil-app:
+    image: evil-app
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+    ports:
+      - 8080:8080

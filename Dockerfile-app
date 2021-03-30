@@ -1,0 +1,15 @@
+FROM golang:1.16.2-buster as builder
+
+ARG CONTRAST_GO_AGENT_VERSION=0.14.0
+
+ADD https://pkg.contrastsecurity.com/artifactory/go-agent-release/${CONTRAST_GO_AGENT_VERSION}/linux-amd64/contrast-go /bin/contrast-go
+
+RUN chmod u+x /bin/contrast-go
+
+WORKDIR /build
+
+COPY ./ ./
+
+RUN contrast-go build -o /build/main
+
+ENTRYPOINT [ "/build/main" ]

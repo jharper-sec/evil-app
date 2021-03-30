@@ -1,0 +1,98 @@
+[
+    {
+        "first_name": "Elliot",
+        "last_name": "Alderson",
+        "company": "Allsafe",
+        "title": "Cybersecurity Engineer",
+        "email": "elliot.alderson@allsafe.co",
+        "phone": "212-555-0179",
+        "dob": "09-17-1987",
+        "ssn": "278-94-1897",
+        "salary": "120000",
+        "admin": "true"
+    },
+    {
+        "first_name": "Tyrell",
+        "last_name": "Wellick",
+        "company": "Evil Corp",
+        "title": "Senior Vice President of Technology",
+        "email": "tyrell.wellick@evil.corp",
+        "phone": "323-867-5309",
+        "dob": "12-25-1982",
+        "ssn": "315-45-6789",
+        "salary": "350000",
+        "admin": "false"
+    },
+    {
+        "first_name": "Angela",
+        "last_name": "Moss",
+        "company": "Allsafe",
+        "title": "Account Executive",
+        "email": "angela.moss@allsafe.co",
+        "phone": "332-222-2222",
+        "dob": "02-27-1988",
+        "ssn": "271-62-8721",
+        "salary": "100000",
+        "admin": "false"
+    },
+    {
+        "first_name": "Gideon",
+        "last_name": "Goddard",
+        "company": "Allsafe",
+        "title": "Chief Executive Officer",
+        "email": "gideon.goddard@allsafe.co",
+        "phone": "347-882-2872",
+        "dob": "04-06-1963",
+        "ssn": "758-28-2732",
+        "salary": "500000",
+        "admin": "false"
+    },
+    {
+        "first_name": "Lloyd",
+        "last_name": "Chung",
+        "company": "Allsafe",
+        "title": "Cybersecurity Engineer",
+        "email": "lloyd.chung@allsafe.co",
+        "phone": "516-982-2812",
+        "dob": "12-08-1984",
+        "ssn": "901-38-2837",
+        "salary": "120000",
+        "admin": "true"
+    },
+    {
+        "first_name": "Ollie",
+        "last_name": "Parker",
+        "company": "Allsafe",
+        "title": "Account Executive",
+        "email": "ollie.parker@allsafe.co",
+        "phone": "518-823-2822",
+        "dob": "03-13-1986",
+        "ssn": "451-37-2912",
+        "salary": "110000",
+        "admin": "false"
+    },
+    {
+        "first_name": "Terry",
+        "last_name": "Colby",
+        "company": "Evil Corp",
+        "title": "Chief Technology Officer",
+        "email": "terry.colby@evil.corp",
+        "phone": "585-283-1723",
+        "dob": "07-18-1958",
+        "ssn": "532-82-7210",
+        "salary": "750000",
+        "admin": "false"
+    },
+    {
+        "first_name": "Scott",
+        "last_name": "Knowles",
+        "company": "Evil Corp",
+        "title": "Senior Vice President of Technology",
+        "email": "scott.knowles@evil.corp",
+        "phone": "607-912-2874",
+        "dob": "09-14-1962",
+        "ssn": "226-77-8720",
+        "salary": "500000",
+        "admin": "false"
+    }
+]
