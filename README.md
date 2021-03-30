@@ -36,12 +36,12 @@ contrast-go build -o evil-app
 ## Run with Contrast
 1. Download `contrast_security.yaml` from Contrast to application directory
 
-1. Start Contrast Service
+2. Start Contrast Service
 ```bash
 contrast-service
 ```
 
-1. Start application
+3. Start application
 ```bash
 ./evil-app
 ```
