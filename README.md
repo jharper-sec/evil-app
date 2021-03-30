@@ -8,26 +8,32 @@ Upcoming vulnerabilities:
 * Path Traversal
 
 # Pre-Requisites
-* Go 1.16
+## Normal
+* Go >= 1.16
 
-# Build
-## 1. Run locally
+## Contrast
+* contrast-go >= 0.14.0
+* contrast-service >= 2.19.0
+
+# Normal Build/Run Instructions
+## Build
 ```bash
 go build
 ```
 
-# Run
+## Run
 ```bash
 ./evil-app
 ```
 
-# Build with Contrast
+# Contrast Build/Run Instructions
+## Build with Contrast
 Must have `contrast-go` installed.
 ```bash
 contrast-go build -o evil-app
 ```
 
-# Run with Contrast
+## Run with Contrast
 1. Download `contrast_security.yaml` from Contrast to application directory
 
 1. Start Contrast Service
