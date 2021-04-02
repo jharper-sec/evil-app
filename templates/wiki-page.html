@@ -1,0 +1,17 @@
+{{ define "wiki-page" }}
+{{ template "banner" . }}
+{{ template "header" . }}
+<div class="container">
+    <main>
+        <div class="container-fluid">
+            <div>
+                <h2>{{ .Subject }}</h2>
+            </div>
+            <div>
+                {{ .Content }}
+            </div>
+        </div>
+    </main>
+</div>
+{{ template "footer" . }}
+{{ end }}
