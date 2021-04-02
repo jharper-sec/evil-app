@@ -1,0 +1,21 @@
+{{ define "header" }}
+
+    <header class="bg-white">
+        <div class="container">
+        <div class="container-fluid">
+            <nav aria-label="breadcrumb" class="py-3">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Users</a></li>
+                    <li class="breadcrumb-item">Tyrell Wellick</li>
+                </ol>
+            </nav>
+            <h1>{{if .PageHeader.Title }}{{ .PageHeader.Title }}{{ end }}</h1>
+            <p>
+                {{if .PageHeader.Description }}{{ .PageHeader.Description }}{{ end }}
+            </p>
+        </div>
+    </div>
+    <hr>
+    </header>
+{{ end }}

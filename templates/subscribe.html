@@ -1,0 +1,62 @@
+{{ define "subscribe" }}
+{{ template "banner" . }}
+{{ template "header" . }}
+<div class="container">
+<main>
+  <div class="container-fluid">
+    <div id="body_content" class="col my-3">
+      <h2>Subscribe</h2>
+      <form method="POST">
+        <div class="form-group">
+          <label for="nameInput">Name</label><br />
+          <input type="text" name="name" class="form-control" id="nameInput" aria-describedby="nameInputHelp"
+            placeholder="Your Name">
+          <small id="nameInputHelp" class="form-text text-muted">Enter the name you would like us to address you
+            by.</small>
+          <br />
+          <br />
+          <label for="emailAddressInput">Email address</label><br />
+          <input type="email" name="email" id="emailAddressInput" class="form-control"
+            aria-describedby="emailAddressHelp" placeholder="Enter email">
+          <small id="emailAddressHelp" class="form-text text-muted">Please enter a valid email address to recieve our
+            newsletter.</small>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      {{ if .Subscribed}}
+      {{ if and .Name .Email }}
+      <hr>
+      <div class="alert alert-success alert-dismissable fade show" role="alert">
+        <h4 class="alert-heading">Subscribed!</h4>
+        <p>The following name & email address has been subscribed to recieve notifications of upcoming company events.
+        </p>
+        <hr>
+        <p class="mb-0">
+          <b>Name:</b> {{.Name}}<br />
+          <b>Email:</b> {{.Email}}<br />
+        </p>
+        <div>
+          {{ else }}
+          <hr>
+          <div class="alert alert-danger alert-dismissable fade show" role="alert">
+            <h4 class="alert-heading">Error!</h4>
+            <p>Something went wrong. Please check your inputs. You entered:</p>
+            <hr>
+            <p class="mb-0">
+              <b>Name:</b> {{.Name}}<br />
+              <b>Email:</b> {{.Email}}<br />
+            </p>
+            <div>
+              {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+{{ template "footer" . }}
+{{ end }}

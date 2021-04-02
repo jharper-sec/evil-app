@@ -1,0 +1,110 @@
+{{ define "users" }}
+{{ template "banner" . }}
+{{ template "header" . }}
+<div class="container">
+  <main>
+    <div class="container-fluid">
+      <h2>Search Employees</h2>
+      <div class="">
+        
+        <form method="POST">
+          <div class="form-group">
+            <label for="userName">Search Employees</label>
+            <input type="text" name="search" class="form-control" id="userName" aria-describedby="userNameHelp"
+              placeholder="First or Last Name" />
+            <small id="userNameHelp" class="form-text text-muted">Enter first or last name of the user you want to
+              search
+              for.</small>
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <br />
+        {{ if .Users }}
+        <h3>Employee Results</h3>
+        <table class="table">
+          <thead>
+            <tr class="table-dark">
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Company</th>
+              <th scope="col">Title</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Date of Birth</th>
+              <th scope="col">SSN</th>
+              <th scope="col">Salary</th>
+              <th scope="col">Admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range $i, $row := .Users }}
+            {{ if eq $row.Admin "true"}}
+            <tr class="table-danger">
+              {{ else }}
+            <tr class="table-light">
+              {{ end }}
+              <th scope="row">{{ $i }}</th>
+              <td>{{ $row.FirstName }}</td>
+              <td>{{ $row.LastName }}</td>
+              <td>{{ $row.Company }}</td>
+              <td>{{ $row.Title }}</td>
+              <td>{{ $row.Email }}</td>
+              <td>{{ $row.Phone }}</td>
+              <td>CONFIDENTIAL</td>
+              <td>CONFIDENTIAL</td>
+              <td>CONFIDENTIAL</td>
+              <td>{{ $row.Admin }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+        {{ end }}
+      </div>
+      <br />
+      <h2>Featured Employees</h2>
+      <div class="card-deck row">
+        <div class="card col m-3 p-3">
+          <img src="/public/images/phillip-price.jpeg" class="card-img-top" alt="Phillip Price">
+          <div class="card-block p-3">
+            <h5 class="card-title">Phillip Price</h5>
+            <p class="card-text blockquote">"In my life, as I was making my way, I always asked the question, 'Am I the
+              most powerful person in the room?' And the answer needed to be 'Yes'."</p>
+            <a href="#" class="btn btn-primary">View Bio</a>
+          </div>
+        </div>
+        <div class="card col m-3 p-3">
+          <img src="/public/images/terry-colby.webp" class="card-img-top" alt="Terry Colby">
+          <div class="card-block p-3">
+            <h5 class="card-title">Terry Colby</h5>
+            <p class="card-text blockquote">"If you want to change things, perhaps you should try from within, because
+              this is what happens from the outside."</p>
+            <a href="#" class="btn btn-primary">View Bio</a>
+          </div>
+        </div>
+        <div class="card col m-3 p-3">
+          <img src="/public/images/scott-knowles.png" class="card-img-top" alt="Scott Knowles">
+          <div class="card-block p-3">
+            <h5 class="card-title">Scott Knowles</h5>
+            <p class="card-text blockquote">"Tyrell, I want you to accept the hard truth, right here, right now in front
+              of me. You are not going to be CTO. I want to see that look wash over your face."</p>
+            <a href="#" class="btn btn-primary">View Bio</a>
+          </div>
+        </div>
+        <div class="card col m-3 p-3">
+          <img src="/public/images/tyrell-wellick.jpg" class="card-img-top" alt="Tyrell Wellick">
+          <div class="card-block p-3">
+            <h5 class="card-title">Tyrell Wellick</h5>
+            <p class="card-text blockquote">"Power belongs to the people that take it. Nothing to do with their hard
+              work, strong ambitions, or rightful qualifications, no. The actual will to take is often the only thing
+              that's necessary."</p>
+            <a href="#" class="btn btn-primary">View Bio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+{{ template "footer" . }}
+{{ end }}

@@ -1,0 +1,68 @@
+{{ define "wiki" }}
+{{ template "banner" . }}
+{{ template "header" . }}
+<div class="container">
+  <main>
+    <div class="container-fluid">
+      <h2>Topics</h2>
+      <div class="bg-light my-3">
+        <div>
+          <a class="btn btn-outline-success my-3" data-bs-toggle="collapse" href="#new-article" role="button"
+            aria-expanded="false" aria-controls="new-article"> New Topic</a>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a href="#"
+              class="d-inline float-start stretched-link text-decoration-none">Topic 1</a>
+            <div class="btn-group d-inline float-end" role="group">
+              <a href="#" class="btn btn-info" role="button">View</a>
+              <a href="#" class="btn btn-warning" role="button">Edit</a>
+              <a href="#" class="btn btn-danger disabled" role="button">Delete</a>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="d-inline float-start stretched-link text-decoration-none">Topic 2</a>
+            <div class="btn-group d-inline float-end" role="group">
+              <a href="" class="btn btn-info" role="button">View</a>
+              <a href="#" class="btn btn-warning" role="button">Edit</a>
+              <a href="#" class="btn btn-danger disabled" role="button">Delete</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div id="new-article" class="collapse">
+        <hr>
+        <h2>New Article</h2>
+        <form method="POST">
+          <div class="form-group">
+            <label for="subjectInput">Subject</label><br />
+            <input type="text" name="subject" class="form-control" id="subjectInput" aria-describedby="subjectInputHelp"
+              placeholder="Your Name">
+            <small id="subjectInputHelp" class="form-text text-muted">Enter the name of the article. </small>
+            <br />
+            <br />
+            <label for="contentInput">Content</label><br />
+            <textarea type="text" name="content" id="contentInput" class="form-control" rows="20"
+              aria-describedby="contentHelp" placeholder="Enter article text here"></textarea>
+            <small id="contentHelp" class="form-text text-muted">Please enter article within this text box.</small>
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+      {{ if and .SelectedArticle.Subject .SelectedArticle.Content }}
+      <hr>
+      <div>
+        <h2>Subject: {{ .SelectedArticle.Subject }}</h2>
+        <small>Article ID: {{ .SelectedArticle.UUID }}</small>
+      </div>
+      <hr>
+      <div>
+        <p>{{ .SelectedArticle.Content }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </main>
+</div>
+{{ template "footer" . }}
+{{ end }}
