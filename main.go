@@ -9,12 +9,10 @@ import (
 func main() {
 	seedUserData("data/user_seed_data.json")
 
+	// register routes
 	http.HandleFunc("/", RootHandler)
-
 	http.HandleFunc("/users", UsersHandler)
-
 	http.HandleFunc("/subscribe", SubscribeHandler)
-
 	http.HandleFunc("/wiki", WikiHandler)
 
 	// serve up static content
